@@ -1,0 +1,3 @@
+#!/bin/bash
+awk -F: '$2 > 20' db.txt | sort > sorted_db.txt
+

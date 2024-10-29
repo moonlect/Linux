@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Компиляция fork1.c
+gcc -E fork1.c -o fork1.i  # Препроцессинг
+gcc -S fork1.i -o fork1.s  # Ассемблерный код
+gcc -c fork1.s -o fork1.o  # Объектный файл
+gcc fork1.o -o fork1       # Исполняемый файл
+
+# Компиляция программы взаимодействия
+gcc -E fork2.c -o fork2.i  # Препроцессинг
+gcc -S fork2.i -o fork2.s  # Ассемблерный код
+gcc -c fork2.s -o fork2.o  # Объектный файл
+gcc fork2.o -o fork2       # Исполняемый файл
+
+# Удаление временных файлов
+rm *.i *.s *.o
+

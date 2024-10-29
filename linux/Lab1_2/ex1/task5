@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Местонахождение командных интерпретаторов:"
+which bash
+which sh
+which zsh
+echo "Текущий интерпретатор: $SHELL"
+

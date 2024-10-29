@@ -1,0 +1,6 @@
+./task2
+./task1
+./task3
+./task5
+./task4_sum
+./task1_v2

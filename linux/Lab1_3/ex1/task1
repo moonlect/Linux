@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Первый диалог Yes/No
+dialog --yesno "Вы хотите продолжить?" 7 60
+response1=$?
+
+if [ $response1 -eq 0 ]; then
+    # Если ответ "Yes", запускаем второй диалог Yes/No
+    dialog --yesno "Вы уверены, что хотите продолжить?" 7 60
+    response2=$?
+
+    if [ $response2 -eq 0 ]; then
+        # Если ответ "Yes" на второй диалог
+        dialog --msgbox "Вы выбрали продолжить." 7 60
+    else
+        # Если ответ "No" на второй диалог
+        dialog --msgbox "Вы выбрали не продолжать." 7 60
+    fi
+else
+    # Если ответ "No" на первый диалог
+    dialog --msgbox "Вы выбрали не продолжать." 7 60
+fi
+

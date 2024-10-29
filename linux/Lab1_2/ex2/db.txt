@@ -1,0 +1,7 @@
+Petrov: 20: 150: male
+Sidorov: 22: 50: male
+Nutrina: 21: 70: female
+Atomova: 19: 50: female
+Stankewich: 30: 70: male
+Kudryavetc: 20: 60: female
+Timoschenko: 20: 90: male

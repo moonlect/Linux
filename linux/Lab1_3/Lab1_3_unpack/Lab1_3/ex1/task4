@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Функция для получения котировки выбранной валюты
+get_currency_rate() {
+    case $1 in
+        1) currency="USD";;
+        2) currency="EUR";;
+        3) currency="GBP";;
+        4) currency="JPY";;
+        5) currency="AUD";;
+	exit) clear; exit 0;;
+        *) dialog --msgbox "Неверный выбор" 6 20; return;;
+    esac
+
+    # Используем API для получения курса валют
+    rate=$(curl -s "https://api.exchangerate-api.com/v4/latest/$currency" | jq -r ".rates.BYN")
+    dialog --msgbox "Курс $currency к BYN: $rate" 6 40
+}
+
+# Основная программа
+while true; do
+    choice=$(dialog --menu "Выберите валюту для получения котировки (или введите 'exit' для выхода):" 15 50 6 \
+    1 "USD" \
+    2 "EUR" \
+    3 "GBP" \
+    4 "JPY" \
+    5 "AUD" \
+    exit "Выход" 3>&1 1>&2 2>&3)
+
+    get_currency_rate $choice
+done
+
+

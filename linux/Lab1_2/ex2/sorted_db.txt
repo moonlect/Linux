@@ -1,0 +1,3 @@
+Nutrina: 21: 70: female
+Sidorov: 22: 50: male
+Stankewich: 30: 70: male

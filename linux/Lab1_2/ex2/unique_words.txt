@@ -1,0 +1,4 @@
+Atomova: 19: 50: female
+Kudryavetc: 20: 60: female
+Petrov: 20: 150: male
+Timoschenko: 20: 90: male

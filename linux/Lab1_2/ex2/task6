@@ -1,0 +1,3 @@
+#!/bin/bash
+awk -F: '$1 ~ /^Atom/ {print $1}' db.txt | sort
+

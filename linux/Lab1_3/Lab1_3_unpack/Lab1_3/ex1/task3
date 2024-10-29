@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Функция для получения списка валют
+get_currency_list() {
+    echo "1. USD"
+    echo "2. EUR"
+    echo "3. GBP"
+    echo "4. JPY"
+    echo "5. AUD"
+}
+
+# Функция для получения котировки выбранной валюты
+get_currency_rate() {
+    case $1 in
+        1) currency="USD";;
+        2) currency="EUR";;
+        3) currency="GBP";;
+        4) currency="JPY";;
+        5) currency="AUD";;
+        *) echo "Неверный выбор"; exit 1;;
+    esac
+
+    # Используем API для получения курса валют
+    rate=$(curl -s "https://api.exchangerate-api.com/v4/latest/$currency" | jq -r ".rates.BYN")
+    echo "Курс $currency к BYN: $rate"
+}
+
+# Основная программа
+echo "Выберите валюту для получения котировки:"
+get_currency_list
+read -p "Введите номер валюты: " choice
+get_currency_rate $choice

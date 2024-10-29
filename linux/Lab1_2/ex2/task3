@@ -1,0 +1,5 @@
+#!/bin/bash
+file1="db.txt"
+file2="sorted_db.txt"
+comm -23 <(sort "$file1") <(sort "$file2") > unique_words.txt
+

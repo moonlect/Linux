@@ -1,0 +1,5 @@
+#!/bin/bash
+file1="db.txt"
+file2="sorted_db.txt"
+grep -o -w '\w\+' "$file1" "$file2" | sort | uniq -d | wc -l
+

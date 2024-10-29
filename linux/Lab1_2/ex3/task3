@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source dir1/script
+source dir2/script
+
